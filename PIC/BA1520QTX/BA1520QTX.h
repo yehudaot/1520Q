@@ -2,6 +2,9 @@
 #device adc=10
 #device pass_strings=in_ram
 
+//#define MAIN_ADDRESS 0x2700
+//#include <boot.h>
+
 #FUSES NOWDT                   //No Watch Dog Timer
 #FUSES WDT128                  //Watch Dog Timer uses 1:128 Postscale
 #FUSES INTRC_IO                //Internal RC Osc, no CLKOUT

@@ -1,11 +1,12 @@
 
 
-UCHAR comm_ptr, ttccp = 1, debug_mode = 0;
+UCHAR comm_ptr, ttccp = 1, debug_mode = 1;    //yehuda 1520Q cancel LI17592
 UCHAR FPGA_image[32],D2A_image[20];
 UCHAR ttccp_error_message[40];
 
-UCHAR rp_command = setup.rp ,  pwr_command = setup.pwr;
-bit revp_status; // VERSION 3.3: 2.2.2016 
+//UCHAR rp_command = setup.rp ,  pwr_command = setup.pwr;
+UCHAR rp_command,  pwr_command;
+//bit revp_status; // VERSION 3.3: 2.2.2016   //////////yehuda 1520Q cancel US,UT and BG 
 
 //-----------------------------------------------------------------------------
 UCHAR COM1_get_chr(void)
@@ -319,7 +320,7 @@ float read_temperature(void)
 //----------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------
-
+/*  //////////yehuda 1520Q cancel US,UT and BG  
 SINT Bits_status1(void)// VERSION 3.3 21.1.2016
 {
 	// float temp;
@@ -336,9 +337,9 @@ SINT Bits_status1(void)// VERSION 3.3 21.1.2016
 	//  setup.SOQPSK, setup.randomizer, setup.data_polarity, rp, setup.data_source,
 	return t;
 }
-
+*/
 //----------------------------------------------------------------------------
-
+/*  //////////yehuda 1520Q cancel US,UT and BG  
 SINT Bits_status2(void)// VERSION 3.3 2.2.2016
 {
 	// float temp;
@@ -363,7 +364,7 @@ SINT Bits_status2(void)// VERSION 3.3 2.2.2016
 	
 	return t;
 }
-
+*/
 //----------------------------------------------------------------------------
 //----------------------------------------------------------------------------  
 SINT  set_power_level(void)
@@ -428,6 +429,7 @@ void update_temperature_string()
 	Transmission time is 0.52mS, max PRI 10mS.
 */
 
+/*  //////////yehuda 1520Q cancel US,UT and BG  
 void prepare_binary_status(void)
 {
 	UINT chksum = 0, idx;
@@ -482,6 +484,8 @@ void prepare_binary_status(void)
 	status_buffer[BINARY_STATUS_LENTGH-2] = chksum & 0xff;
 	status_buffer[BINARY_STATUS_LENTGH-1] =(chksum >> 8) & 0xff;
 }
+*/
+
 
 //----------------------------------------------------------------------------
 // command format:
@@ -615,6 +619,7 @@ UCHAR process_dollar_commands(void)
 				setup.cont_voltage[addr] = value;
 			}
 			break;
+
 		}
 		break;
 		case 'S':
@@ -716,9 +721,9 @@ void list_help(void)
 	COM1_send_str("VM <negative power level><cr>  \tSet negative power level\r\n");
 	COM1_send_str("VC <posetive power level><cr>  \tSet posetive power level\r\n");
 	COM1_send_str("CS <clock phase><cr>  \tSet clock phase (0-1)\r\n");
-	COM1_send_str("UT <UART Time><cr>  \tSet the stop time, default 15 (0-240)\r\n");// VERSION 3.3  21.03.2016
-	COM1_send_str("US <UART Status><cr>  \tSet the Block (0-1)\r\n");// VERSION 3.3  21.03.2016
-	COM1_send_str("BG <UART Change><cr>  \tSet the UART refresh rate [Hz] (1-20)\r\n");// VERSION 3.3  23.03.2016
+	//COM1_send_str("UT <UART Time><cr>  \tSet the stop time, default 15 (0-240)\r\n");// VERSION 3.3  21.03.2016
+	//COM1_send_str("US <UART Status><cr>  \tSet the Block (0-1)\r\n");// VERSION 3.3  21.03.2016
+	//COM1_send_str("BG <UART Change><cr>  \tSet the UART refresh rate [Hz] (1-20)\r\n");// VERSION 3.3  23.03.2016  //yehuda 1520Q remove BG command
 	COM1_send_str("SV <save all><cr>  \tSave parameters\r");
 	COM1_send_str("\r\n");
 }
@@ -728,7 +733,7 @@ void list_help(void)
 void process_ttccp_commands(void)
 {
 	UCHAR ret = 0, chr, buf[40], query = 0, c1, c2, revstat[12], addr;
-	ULONG freq, sub;
+	ULONG freq;		//, sub;   //////////yehuda 1520Q cancel US,UT and BG 
 	UINT  val, rp; //VERSION 3.3 us UINT  val, revp, rp;
 	chr = 2;
 	comm_ptr = 0;
@@ -765,7 +770,7 @@ void process_ttccp_commands(void)
 		}
 		break;
 		case '$':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		if (c2 == 'R') // switch to $ commands ONLY after ttccp login
         {
 			val = get_int();
@@ -783,13 +788,13 @@ void process_ttccp_commands(void)
 			break;
 		*/
 		case 'H':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		COM1_send_str("\r\t HELP LIST \r");
 		list_help();
 		break;
 		
 		case 'F':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'R': // set frequency
@@ -818,7 +823,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'M':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		if (c2 == 'O')  // mode - Addr0 bit 0-3
 		{
             if(query)
@@ -845,7 +850,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'D':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			// case 'B':  // debug mode
@@ -930,7 +935,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'R':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'P':  // HI or LO power - discrete output + DAC   setup.power_high
@@ -959,11 +964,15 @@ void process_ttccp_commands(void)
 						rp_command = setup.rp = 0;
 						delay_ms(50);
 						update_all();
+						delay_ms(1);
+						update_all();
 					}
 					else
 					{
 						rp_command = setup.rp = 1;
 						delay_ms(50);
+						update_all();
+						delay_ms(1);
 						update_all();
 					}
 				}
@@ -993,7 +1002,9 @@ void process_ttccp_commands(void)
 					{
 						pwr_command = 0;
 						setup.pwr = pwr_command;
-						delay_ms(60);
+						delay_ms(50);
+						update_all();
+						delay_ms(1);
 						update_all();
 						ret = 1;
 					}
@@ -1001,7 +1012,9 @@ void process_ttccp_commands(void)
 					{
 						pwr_command = 0;
 						setup.pwr = pwr_command;
-						delay_ms(60);
+						delay_ms(50);
+						update_all();
+						delay_ms(1);
 						update_all();
 					}
 				}
@@ -1009,23 +1022,27 @@ void process_ttccp_commands(void)
 				{
 					if (val == 1)
 					{
-						if(setup.cot)
+						if(setup.cot)  
 						{
 							pwr_command = 1;
 							setup.pwr = pwr_command;
 							power_output();
 							delay_ms(50);
-							ret = 1;
 							update_all();
+							delay_ms(1);
+							update_all(); 
+							ret = 1;
 						}
-						else if(setup.cot == 0)
+						else if(setup.cot == 0)	
 						{
 							pwr_command = 1;
 							setup.pwr = pwr_command;
 							power_output();
 							delay_ms(50);
-							ret = 1;
 							update_all();
+							delay_ms(1);
+							update_all();
+							ret = 1;
 						}
 					}
 					else
@@ -1039,6 +1056,11 @@ void process_ttccp_commands(void)
 			}
 			ret = 1;
 			break;
+
+
+
+
+
 			
 			case 'C':
          	if (query)
@@ -1056,11 +1078,15 @@ void process_ttccp_commands(void)
 						setup.rc = 0;
 						delay_ms(50);
 						update_all();
+						delay_ms(1);
+						update_all();
 					}
 					if(val == 1)
 					{
 						setup.rc = 1;
 						delay_ms(50);
+						update_all();
+						delay_ms(1);
 						update_all();
 					}
 				}
@@ -1085,11 +1111,20 @@ void process_ttccp_commands(void)
 					pwr_command &= 1;
 					delay_ms(50);
 					update_all();
+					delay_ms(1);
+					update_all();
 				}
 				else
 				COM1_send_str("\r\nFAULT\r\n");
 			}
 			break;
+
+
+
+
+
+
+
 			
 			case 'A': // Addr 0 bit 6     setup.randomizer
 			if (query)
@@ -1129,7 +1164,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'W':            // query
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		if (c2 == 'A')
         {
 			//xxxx
@@ -1138,7 +1173,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'S':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'P': // power down - discrete outputs
@@ -1152,7 +1187,7 @@ void process_ttccp_commands(void)
 		}
 		break;
 		
-		
+/*  //////////yehuda 1520Q cancel US,UT and BG 
 		case 'U': // VERSION 3.3 UT US
 		if (!ttccp_login) break;
 		switch (c2)
@@ -1180,7 +1215,8 @@ void process_ttccp_commands(void)
 			}
 			ret = 1;
 			break; 
-			
+*/	
+/*	  //////////yehuda 1520Q cancel US,UT and BG 	
 			case 'S':
 			{
 				if (query)
@@ -1208,7 +1244,9 @@ void process_ttccp_commands(void)
 			break;
 		}
 		break;
-		
+*/
+
+/*		///////////////////////////yehuda 1520Q remove BG command
 		case 'B': // VERSION 3.6 BG Block Ghange and Check Function 23.0.2016
 		if (!ttccp_login) break;
 		switch (c2)
@@ -1239,10 +1277,10 @@ void process_ttccp_commands(void)
 			break;
 		}
 		break;
-		
+*/		
       	
 		case 'I':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'D':     // Addr 6 bits 2-5     setup.internal_pattern
@@ -1286,7 +1324,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'T':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		if (c2 == 'E')
         {
             update_temperature_string();
@@ -1295,7 +1333,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'V':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'E':  // return version
@@ -1341,15 +1379,15 @@ void process_ttccp_commands(void)
 			COM1_send_str("\r\nFAIL\r\n");
 			break;
 			
-			case 'P':  // power level control like in Generic TX  $P
+			case 'P':  // VP command power level control like in Generic TX  $P
 			if (query)
             {
 				sprintf(buf, "VP %lu\r", setup.power_level + 20);
 				COM1_send_str(buf);
 			}
 			else
-            set_power_level();
-            ret = 1;
+			set_power_level();
+			ret = 1;
 			break;
 			
 			case 'M': // manual power level
@@ -1381,7 +1419,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'C':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		if (c2 == 'S')  // Addr 6 bit 0    setup.clock_source
         {
 			if (query)
@@ -1437,7 +1475,7 @@ void process_ttccp_commands(void)
 		break;
 		
 		case 'G':
-		if (!ttccp_login) break;
+//		if (!ttccp_login) break;
 		switch (c2)
         {
 			case 'P':
@@ -1489,21 +1527,21 @@ void process_ttccp_commands(void)
 		setup.frequency, revstat, current_power, setup.bitrate/100, setup.bitrate%100, setup.mode, setup.clock_source, setup.pwr);
 		COM1_send_str(buf);
 		
-		sprintf(buf, "\r\n\nDE=%u, RA=%u, DP=%u, RP=%lu, DS=%u, ID=%u, VL=%lu, RB=%lu, RC=%lu, CP=%u  \r"
+		sprintf(buf, "\r\n\nDE=%u, RA=%u, DP=%u, RP=%lu, DS=%u, ID=%u, VL=%lu, VP=%lu, RB=%lu, RC=%lu, CP=%u  \r"
 		setup.SOQPSK, setup.randomizer, 1 - setup.data_polarity, rp, setup.data_source,
-		setup.internal_pattern, setup.power_low_level+20, setup.cot, setup.rc,
+		setup.internal_pattern, setup.power_low_level+20, setup.power_level+20, setup.cot, setup.rc,
 		setup.clock_polarity);
 		COM1_send_str(buf);
 		
-		sprintf(buf, "\r\n\nUT=%u, US=%u BG= %lu [Hz] %lu [mSec]\r" setup.UART_Time, setup.UART_Status, 1000 / setup.Block_per_second , setup.Block_per_second); // VERSION 3.3 17.1.2016
-		COM1_send_str(buf);
+		///sprintf(buf, "\r\n\nUT=%u, US=%u BG= %lu [Hz] %lu [mSec]\r" setup.UART_Time, setup.UART_Status, 1000 / setup.Block_per_second , setup.Block_per_second); // VERSION 3.3 17.1.2016
+		///COM1_send_str(buf);
 		
         update_temperature_string();
         ret = 0;
 		break;
 		default:
       	{
-			if (!ttccp_login) break;// VERSION 3.3 27.01.2016
+//			if (!ttccp_login) break;// VERSION 3.3 27.01.2016
 			COM1_send_str("\r\nFAIL\r\n");
 			
 		}

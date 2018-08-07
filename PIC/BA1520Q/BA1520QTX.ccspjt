@@ -1,0 +1,16 @@
+[PROJECT]
+Target=BA1520QTX.hex
+Processor_Text=PIC18LF45K22
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=BA1520QTX.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;C:\BA\Software_projects\PIC\1520Q\BA1520QTX\
+[BA1520QTX.c]
+Type=4
+[mru-list]
+1=BA1520QTX.c
+[Units]
+Count=1
+1=BA1520QTX (main)

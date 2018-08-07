@@ -1,0 +1,4 @@
+>>> Warning 202 "message_handlers.c" Line 104(27,36): Variable never used:   ant_delay
+>>> Warning 202 "message_handlers.c" Line 168(7,8): Variable never used:   i
+C:\BA\Software_projects\PIC\1533\BA_1533\1533_bootloader\5_bootloader_tx\BA1510_v1_f\src\message_handlers.o ===>  0 Errors,  2 Warnings.
+Build Successful.

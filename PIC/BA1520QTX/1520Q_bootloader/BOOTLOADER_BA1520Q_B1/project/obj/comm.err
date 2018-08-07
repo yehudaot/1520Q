@@ -1,0 +1,3 @@
+>>> Warning 202 "..\src\comm.c" Line 35(19,20): Variable never used:   c
+D:\Projects\BA\BA1510\embedded\src\comm.o ===>  0 Errors,  1 Warnings.
+Build Successful.

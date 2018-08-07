@@ -1,0 +1,6 @@
+>>> Warning 204 "loader.c" Line 32(1,1): Condition always FALSE
+>>> Warning 204 "loader.c" Line 84(1,1): Condition always FALSE
+>>> Warning 204 "loader.c" Line 102(1,1): Condition always FALSE
+>>> Warning 203 "loader.c" Line 177(1,1): Condition always TRUE
+C:\BA\Software_projects\PIC\1533\BA_1533\BA1533RXv1_0\BOOTLOADER_BA1533_RX_B1\src\loader.o ===>  0 Errors,  4 Warnings.
+Build Successful.

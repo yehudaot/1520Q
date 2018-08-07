@@ -1,0 +1,4 @@
+>>> Warning 204 "..\src\calibration.c" Line 23(1,1): Condition always FALSE
+>>> Warning 204 "..\src\calibration.c" Line 38(1,1): Condition always FALSE
+D:\Projects\BA\BA1510\embedded\src\calibration.o ===>  0 Errors,  2 Warnings.
+Build Successful.

@@ -1,0 +1,56 @@
+_RETURN_
+CCP_1
+CCP_1_LOW
+CCP_1_HIGH
+CCP_2
+CCP_2_LOW
+CCP_2_HIGH
+CCP_3
+CCP_3_LOW
+CCP_3_HIGH
+CCP_4
+CCP_4_LOW
+CCP_4_HIGH
+CCP_5
+CCP_5_LOW
+CCP_5_HIGH
+C1OUT
+C2OUT
+rs232_errors
+UPPER_TICKS_1
+crc8_table
+
+Project Directory:
+    D:\Projects\BA\BA1510\embedded\project\
+
+Project Files:
+    ..\src\crc8.c                                           [27-May-17 22:12  CRC=2492ABFD]
+    ..\include\BA1474.h                                     [09-Jan-18 11:57  CRC=ED047024]
+    C:\Program Files (x86)\PICC\devices\18F45K22.h          [25-Sep-12 16:19  CRC=5E2E3928]
+    ..\include\boot.h                                       [19-Sep-17 11:26  CRC=7B836BDD]
+    C:\Program Files (x86)\PICC\drivers\stdint.h            [30-Dec-08 09:01  CRC=9F7F640F]
+    ..\include\crc8.h                                       [24-Apr-17 10:57  CRC=00000000]
+
+Source signature=8AC82535
+
+Units:
+    ..\src\crc8 (main)
+
+Compiler Settings:
+    Processor:      PIC18F45K22
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+    Output file:    Relocatable
+    Predefined symbols:
+       #define __DEBUG 1
+       #define __18F45K22 TRUE
+
+Output Files:
+    Errors:      obj\crc8.err
+    Ext Symbols: obj\crc8.esym
+    Object:      obj\crc8.o
+    Symbols:     obj\crc8.osym

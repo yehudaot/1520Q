@@ -1,0 +1,3 @@
+>>> Warning 203 "main.c" Line 62(1,1): Condition always TRUE
+C:\BA\Software_projects\PIC\1533\BA_1533\1533_bootloader\5_bootloader_tx\BA1510_v1_f\src\main.o ===>  0 Errors,  1 Warnings.
+Build Successful.

@@ -1,0 +1,3 @@
+>>> Warning 203 "..\src\main.c" Line 62(1,1): Condition always TRUE
+D:\Projects\BA\BA1510\embedded\src\main.o ===>  0 Errors,  1 Warnings.
+Build Successful.

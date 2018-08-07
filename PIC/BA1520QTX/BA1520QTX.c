@@ -49,10 +49,10 @@ UCHAR  TMR_10mS_Cnt;
 UCHAR  TMR_100mS_Flags;
 UCHAR  TMR_100mS_Cnt;
 UCHAR  TMR_1sec_Flags;
-UINT  TMR_SendStatus = 0;
-UCHAR  SendStatusFlag = 0;
-UCHAR  TMR_StartStatus = 0;
-UCHAR  StartStatusFlag = 0;
+//UINT  TMR_SendStatus = 0;   //////////yehuda 1520Q cancel US,UT and BG 
+//UCHAR  SendStatusFlag = 0;  //////////yehuda 1520Q cancel US,UT and BG 
+//UCHAR  TMR_StartStatus = 0; //////////yehuda 1520Q cancel US,UT and BG 
+//UCHAR  StartStatusFlag = 0;   //////////yehuda 1520Q cancel US,UT and BG  
 
 UCHAR timerTick_1ms = 0;
 
@@ -150,21 +150,22 @@ struct {
        UINT  rc;
        UINT  rp;
        UCHAR UART_Time; // VERSION 3.3 UT
-       UCHAR UART_Status; // VERSION 3.3 US 17.03.2016
+//       UCHAR UART_Status; // VERSION 3.3 US 17.03.2016    //////////yehuda 1520Q cancel US,UT and BG  
        byte bitlow_power_level;// VERSION 3.3  VL Change 21.03.2016
        byte bitpower_level;// VERSION 3.3 VP Change 21.03.2016
        UINT	Block_per_second; // VERSION 3.3  Change 23.03.2016 Data block send speed 
        UINT setup_version; // the version of this specific setup
+	   //POWER_TRANS1 Ptrans1[23];  //1520Q yehuda make FFWR table configurable
 } setup;
 
 UINT allow_write = 0;
 UINT revp;// VERSION 3.3 Revers Power 0-good 1-bad
-SINT current_temperature;
+//SINT current_temperature;		//////////yehuda 1520Q cancel US,UT and BG 
 UINT current_power;// VERSION 3.3  FFWR 02.05.16
 UINT gl_current_power_level = 0;
 UINT gl_current_power_en_value = 0;
-SINT stay_on =0;
-UINT  tx_block_len , TX_Counter = 0;
+//SINT stay_on =0;		//////////yehuda 1520Q cancel US,UT and BG 
+UINT  tx_block_len;   // , TX_Counter = 0;  //////////yehuda 1520Q cancel US,UT and BG cancel TX_Counter
 UINT  status_tx_index;
 UCHAR status_buffer[BINARY_STATUS_LENTGH]; 
 
@@ -196,7 +197,12 @@ UINT convert_power(UINT analog);// VERSION 3.3 VP Change 30.03.2016
 #include "BA1520QTX_intr.c"
 #include "BA1520QTX_serial.c"
 
-
+/*
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h> 
+*/
 //========== functions =========================================
 // // VERSION 3.3 US 30.03.2016
 //========== functions =========================================
@@ -232,6 +238,7 @@ const POWER_TRANS Ptrans[] = {
 //=============================================================================
 // VERSION 3.3  04.052016 FFWR
 //=============================================================================
+/*					//use the table setup.power_in yehuda 1520Q
 typedef struct {
   UINT analog1;
   UINT Pout1;
@@ -264,7 +271,7 @@ const POWER_TRANS1 Ptrans1[] = {
 {  1005,   41  }, //  3.2V    ,21
 {   1023,   55  }
 };
-
+*/
 //=============================================================================
 //=============================================================================
 void send_FPGA_command(UCHAR length, UCHAR *data)
@@ -487,8 +494,15 @@ UINT convert_power1(UINT analog)// FFWR POWER
   UINT idx;
   for (idx = 0; idx < 20; idx++)
     {
-  if (analog >= Ptrans1[idx].analog1 && analog < Ptrans1[idx+1].analog1)
-    return Ptrans1[idx].Pout1;
+  //if (analog >= Ptrans1[idx].analog1 && analog < Ptrans1[idx+1].analog1)
+  if (analog >= setup.power_in[idx] && analog < setup.power_in[idx+1])
+  {
+	if((analog - setup.power_in[idx]) >= (setup.power_in[idx+1] - analog))
+		return idx + 21;
+	else
+		return idx + 20;
+  }
+    //return Ptrans1[idx].Pout1;
   }
   return 0;
   }
@@ -500,16 +514,16 @@ UINT convert_power1(UINT analog)// FFWR POWER
 // the function also calls 'update_all' when a transition from 
 // low to high occurs.
 // the truth table for setting the discrete is:
-
+//updated for 1520Q
 // SB cot pwr Output
-// 0   0   0    H
-// 0   0   1    L
-// 0   1   0    L
-// 0   1   1    H
+// 0   0   0    L
+// 0   0   1    H
+// 0   1   0    H
+// 0   1   1    L
 // 1   0   0    L
 // 1   0   1    H
-// 1   1   0    H
-// 1   1   1    L
+// 1   1   0    L
+// 1   1   1    H
 
 // the reduction of this function is: 
 // not(sb^cot^pwr) or
@@ -518,7 +532,8 @@ UINT convert_power1(UINT analog)// FFWR POWER
 void set_power_en() 
 {
     static UINT last_val = 0; // saving the last state of the discrete
-    UINT dval = input(STANDBY) ^ (setup.cot == setup.pwr);
+    //UINT dval = input(STANDBY) ^ (setup.cot != setup.pwr);			//yehuda change for rb0 rf1 output
+	UINT dval = (((setup.cot == 0) && (setup.pwr == 1)) || ((!input(STANDBY)) && (setup.cot == 1) && (setup.pwr == 0)) || ((input(STANDBY)) && (setup.cot == 1) && (setup.pwr == 1)));//                  input(STANDBY) ^ (setup.cot != setup.pwr);			//yehuda change for rb0 rf1 output
 
     // set the discrete
     if(dval) 
@@ -539,8 +554,10 @@ void set_power_en()
     // call update all on low to high transition
     if(last_val == 0 && dval == 1) 
     {
-        delay_ms(50);
+        delay_ms(50);		
         update_all();    ////tamir 3/7/18 
+		delay_ms(1);
+		update_all();
     }
     last_val = dval;
     gl_current_power_en_value = dval;
@@ -588,17 +605,17 @@ void power_output(void)
     
   if (setup.frequency < FREQ_LOW_THRESH){
     set_AD5314(DAC_NEG_VOLT, setup.negative_voltage[0]);
-	delay_ms(1);
+	delay_us(20);
 	set_AD5314(DAC_CONT_VOLT, setup.cont_voltage[0]);
 	}
   else if (setup.frequency < FREQ_HIGH_THRESH){
     set_AD5314(DAC_NEG_VOLT, setup.negative_voltage[1]);
-	delay_ms(1);
+	delay_us(20);
 	set_AD5314(DAC_CONT_VOLT, setup.cont_voltage[1]);
 	}
   else{
     set_AD5314(DAC_NEG_VOLT, setup.negative_voltage[2]);
-	delay_ms(1);
+	delay_us(20);
 	set_AD5314(DAC_CONT_VOLT, setup.cont_voltage[2]);
 	}
 
@@ -612,10 +629,10 @@ void power_output(void)
   
   level = get_requested_power_level();
 
-
-  if (power > level + DEADBAND || power < level - DEADBAND)
+  //if (power > level + DEADBAND || power <= level - DEADBAND)
+  if (power != level)			//yehuda 1520Q change for $FB commands 
     {
-    if (power < level)
+    if (power <= level)
       {
       if (power_control <= 1010)
         power_control += DEADBAND / 2;		
@@ -697,18 +714,21 @@ void update_all(void)
   PLL_update();
   delay_ms(5);
   FPGA_set_reg0();
-  delay_ms(5);
+  delay_ms(50);
   FPGA_set_reg6();
-  delay_ms(5);
+  delay_ms(50);
   FPGA_set_bitrate();
   bitr = setup.bitrate;
   power_control = 0;
   }
 
+
+
 void timer_tick() 
 {
     if(timerTick_1ms == 1) {
         timerTick_1ms = 0;
+/*		//////////yehuda 1520Q cancel US,UT and BG
         if (++TMR_SendStatus >= (setup.Block_per_second / 2) && StartStatusFlag == 1 && setup.UART_Status == 1&& (stay_on == 1 || stay_on == 0)) // VERSION 3.3 17.1.2016
         {
             TMR_SendStatus = 0;
@@ -719,10 +739,11 @@ void timer_tick()
               	COM1_send_block(BINARY_STATUS_LENTGH);
             }
         }
+*/
         if (++TMR_1mS_Cnt >= 10)
         {
             TMR_1mS_Cnt = 0;
-            ++TMR_SendStatus; //1mSec count for rhe status VERSION 3.3 20.2.2016
+//            ++TMR_SendStatus; //1mSec count for rhe status VERSION 3.3 20.2.2016,  //////////yehuda 1520Q cancel US,UT and BG
             TMR_10mS_Count++;
             TMR_10mS_Flags = 0xFF;
             if (++TMR_10mS_Cnt >= 10)
@@ -733,11 +754,13 @@ void timer_tick()
                 {
                     TMR_100mS_Cnt = 0;
                     TMR_1sec_Flags = 0xFF;
+/*												//////////yehuda 1520Q cancel US,UT and BG
                     if (++TMR_StartStatus >= setup.UART_Time) // VERSION 3.3 17.1.2016
            			{
            			    TMR_StartStatus = 0;
             			StartStatusFlag = 1;
             		}
+*/
                 }
             }
         }
@@ -745,7 +768,54 @@ void timer_tick()
 }
 
 
+
+
+
+
+
+
+/*
+
+//allows the main program to run without a bootloader
+static void fix_boot() {
+  bool should_write = false;
+
+  uint8_t start_bytes[getenv("FLASH_ERASE_SIZE")];
+  read_program_memory(0, start_bytes, getenv("FLASH_ERASE_SIZE"));
+
+  uint8_t clear_flash[] = { 0xFF, 0xFF, 0xFF, 0xFF };
+  uint8_t jump_to_0x2700[] = { 0x80, 0xEF, 0x13, 0xF0 };  //first line
+
+  if (memcmp(start_bytes, clear_flash, sizeof(clear_flash)) == 0) {
+    should_write = true;
+    //there's nothing at the reset vector let's put a jump to main() there.
+    //this happens when running directly without a bootloader.
+    //the debugger somehow knows to jump to the real main(), but after a reset it no longer works.
+    memcpy(start_bytes, jump_to_0x2700, sizeof(jump_to_0x2700));
+
+  }
+
+  uint8_t jump_to_0x2008[] = { 0x04, 0xEF, 0x10, 0xF0 };
+
+  //check if the interrupt handler contains the correct jump, if not, overwrite it
+  if (memcmp(start_bytes + 0x0008, jump_to_0x2008, sizeof(jump_to_0x2008)) != 0) {
+    should_write = true;
+    memcpy(start_bytes + 0x0008, jump_to_0x2008, sizeof(jump_to_0x2008));
+
+  }
+
+  if (should_write)
+    write_program_memory(0, start_bytes, getenv("FLASH_ERASE_SIZE"));
+
+}
+
+*/
+
+
+
 //=============================================================================
+//#ORG CALIBRATION_AREA_START, CALIBRATION_AREA_END
+//#org MAIN_ADDRESS, MAIN_ADDRESS+0x800
 void main(void)
   {
   int16 vouta = 1000;
@@ -755,7 +825,10 @@ delay_ms(1000);
   output_high(D2A_CSB);
   delay_ms(100);
   read_setup();
-  
+
+  rp_command = setup.rp;
+  pwr_command = setup.pwr;
+
   if (!setup.UART_Time)// VERSION 3.3: 10.2.2016 
 		setup.UART_Time = 10;
 	if (setup.Block_per_second == 0)
@@ -794,13 +867,14 @@ output_high(FPGA_RSTN);
     {
     restart_wdt();
     timer_tick();
+
     if (TMR_100mS_BLINK)
       {
       TMR_100mS_BLINK = 0;
       output_toggle(LED1);
       delay_us(1);
       }
-    
+/* //////////yehuda 1520Q cancel US,UT and BG   
     if (StartStatusFlag == 1 && (COM1_rxo == 0) && (stay_on == 1 || stay_on == 0))
     	{        
 				if (setup.UART_Status == 1)
@@ -812,6 +886,8 @@ output_high(FPGA_RSTN);
 		      } 
 		     
        }
+*/
+/* //////////yehuda 1520Q cancel US,UT and BG
  		if (stay_on == 2 || stay_on == 0) //US1 or US0 StartStatusFlag == 0  (StartStatusFlag == 1 && setup.UART_Status == 0)&& 
  			{  
 		   
@@ -819,11 +895,10 @@ output_high(FPGA_RSTN);
 		   			if (COM1_rxo != 0 )
 		   				stay_on = 2;
 		  }    
+*/
+		comm_handler();
 		power_output();
-		delay_ms(1);		//yehuda
-
-
-
+		
    }
   }
 

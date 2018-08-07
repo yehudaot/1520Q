@@ -1,0 +1,22 @@
+[PROJECT]
+Target=BA1510_Bootloader.hex
+Processor_Text=PIC18F45K22
+CCSVersion=5.008
+Compiler=PCH
+[Target Data]
+FileList=BA1510_Bootloader.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;..\include\;C:\BA\Software_projects\PIC\1510\8.5.18_ver_1_f\BA1510_v1_f\src\;C:\BA\Software_projects\PIC\1533\BA_1533\1533_bootloader\5_bootloader_tx\BA1510_v1_f\src\
+[BA1510_Bootloader.c]
+Type=4
+[mru-list]
+1=BA1510_Bootloader.c
+[Units]
+Count=6
+1=..\src\crc8
+2=..\src\comm
+3=..\src\rfc1662
+4=..\src\uart
+5=..\src\loader
+6=..\src\timer
+Link=1

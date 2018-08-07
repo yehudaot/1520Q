@@ -1,0 +1,69 @@
+_RETURN_
+CCP_1
+CCP_1_LOW
+CCP_1_HIGH
+CCP_2
+CCP_2_LOW
+CCP_2_HIGH
+CCP_3
+CCP_3_LOW
+CCP_3_HIGH
+CCP_4
+CCP_4_LOW
+CCP_4_HIGH
+CCP_5
+CCP_5_LOW
+CCP_5_HIGH
+C1OUT
+C2OUT
+rs232_errors
+UPPER_TICKS_1
+message_buffer
+
+Project Directory:
+    D:\Projects\BA\BA1510\embedded\project\
+
+Project Files:
+    ..\src\main.c                                           [09-Jan-18 11:57  CRC=1BD9EC18]
+    ..\include\BA1474.h                                     [09-Jan-18 11:57  CRC=ED047024]
+    C:\Program Files (x86)\PICC\devices\18F45K22.h          [25-Sep-12 16:19  CRC=5E2E3928]
+    ..\include\boot.h                                       [19-Sep-17 11:26  CRC=7B836BDD]
+    C:\Program Files (x86)\PICC\drivers\stdio.h             [31-Jul-07 13:24  CRC=4E4534F4]
+    C:\Program Files (x86)\PICC\drivers\string.h            [14-Jul-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\drivers\stddef.h            [16-Jul-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\drivers\ctype.h             [03-Jan-08 13:55  CRC=2D1F019F]
+    C:\Program Files (x86)\PICC\drivers\stdint.h            [30-Dec-08 09:01  CRC=9F7F640F]
+    ..\include\comm.h                                       [03-Dec-17 13:32  CRC=6B96E59B]
+    C:\Program Files (x86)\PICC\drivers\stdbool.h           [21-May-12 10:29  CRC=815AEDE8]
+    ..\include\gpio.h                                       [19-Dec-17 16:09  CRC=DD1AC1EE]
+    ..\include\main.h                                       [10-Jul-17 13:12  CRC=D8102B21]
+    ..\include\message.h                                    [11-Jan-18 10:53  CRC=B459CDA0]
+    ..\include\calibration.h                                [03-Dec-17 13:32  CRC=94C1B055]
+    ..\include\message_handlers.h                           [09-Jan-18 11:57  CRC=A80702C8]
+    ..\include\ad5312.h                                     [19-Dec-17 11:14  CRC=65DA5A02]
+    ..\include\timer.h                                      [09-Jan-18 11:57  CRC=B7BF2A98]
+    ..\include\uart.h                                       [10-Jul-17 09:24  CRC=A38663EC]
+
+Source signature=A2C4029F
+
+Units:
+    ..\src\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F45K22
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+    Output file:    Relocatable
+    Predefined symbols:
+       #define __DEBUG 1
+       #define __18F45K22 TRUE
+
+Output Files:
+    Errors:      obj\main.err
+    Ext Symbols: obj\main.esym
+    Object:      obj\main.o
+    Symbols:     obj\main.osym

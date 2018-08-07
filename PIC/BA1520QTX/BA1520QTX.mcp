@@ -35,7 +35,6 @@ file_007=.
 file_008=.
 file_009=.
 file_010=.
-file_011=.
 [GENERATED_FILES]
 file_000=no
 file_001=no
@@ -48,7 +47,6 @@ file_007=no
 file_008=no
 file_009=no
 file_010=no
-file_011=no
 [OTHER_FILES]
 file_000=no
 file_001=no
@@ -61,7 +59,6 @@ file_007=yes
 file_008=yes
 file_009=yes
 file_010=yes
-file_011=yes
 [FILE_INFO]
 file_000=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\BA1520QTX.c
 file_001=PIC18F45K22_registers.h
@@ -74,7 +71,6 @@ file_007=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\BA1520QTX.TRE
 file_008=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\BA1520QTX.STA
 file_009=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\ADRF6703.c
 file_010=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\AD5314.C
-file_011=C:\BA\Software_projects\PIC\1520Q\BA1520QTX\boot.h
 [SUITE_INFO]
 suite_guid={BA86BF99-4C07-4CE2-A9E7-C2A337910996}
 suite_state=

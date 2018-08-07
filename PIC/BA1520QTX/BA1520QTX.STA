@@ -1,20 +1,20 @@
 
-ROM used:   25922/16384 (79%)
-            25922/16384 (79%) including unused fragments
+ROM used:   28686/16384 (88%)
+            28686/16384 (88%) including unused fragments
 
-            5.3 Average locations per line
+            6.0 Average locations per line
             18.4 Average locations per statement
 
-RAM used:   416/1536 (27%) at main() level
-            609/1536 (40%) worst case
+RAM used:   429/1536 (28%) at main() level
+            627/1536 (41%) worst case
 
 Stack used: 11 worst case (9 in main + 2 for interrupts)
 Stack size: 30
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  905   279  20  BA1520QTX.c
-   37     0   0  BA1520QTX.h
+  830   295  19  BA1520QTX.c
+   34     0   0  BA1520QTX.h
  1000     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18LF45K22.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
   750     0   0  PIC18F45K22_registers.h
@@ -22,9 +22,9 @@ Lines Stmts  %   Files
    58    40   3  AD9746.c
   148    61   4  ADRF6703.c
    77    18   1  BA1520QTX_intr.c
- 1705   904  64  BA1520QTX_serial.c
+ 1667  1040  67  BA1520QTX_serial.c
 ----- -----
- 4876  1407 Total
+ 4760  1559 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -35,7 +35,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    106   0    5   724  6.0  write_D2A
 0     78   0    2   345  5.3  PLL_send_bits
 0     76   0    5   321  1.9  PLL_send_word
-0     58   0    0             @const1548
+0     58   0    0             @const1556
 0    174   0    7   314  5.3  PLL_initialize
 0    574   1   22   599  7.2  PLL_compute_freq_parameters
 0     92   0   14             @MUL3232
@@ -49,122 +49,138 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     96   0    2   233  3.7  TBE_isr
 0     44   0    1   144  4.3  COM1_get_chr
 0    200   0    6   687  6.9  COM1_send_str
+0     22   0    3    96  1.7  COM1_send_block
 0     22   0    0   106  2.1  COM1_init
 0     32   0    1    30  2.3  get_char
 0     30   0    0    25  1.9  peek_char
 0     72   0    1   105  3.8  skip_spc
 0    200   0    7   373  6.3  get_int
 0     84   0    6             @MULS1616
-0    192   0    9   236  5.6  str_to_long
-0    282   1    9   405  6.6  get_hex
+0    188   0    9   236  5.6  str_to_long
+0    252   0    9   405  6.6  get_hex
 0    104   0    4   153  4.3  get_frequency
-0    620   1    5  4612 10.1  inc_dec
-0    640   1    4   250  1.4  list_help1
-0     88   0    0             @const1617
-0     72   0    0             @const1618
-0     92   0    0             @const1619
-0     62   0    0             @const1620
-0     72   0    0             @const1621
-0     72   0    0             @const1622
-0     80   0    0             @const1623
-0     48   0    0             @const1624
-0     86   0    0             @const1625
+0    636   1    5  4612 10.1  inc_dec
+0    636   1    4   250  1.4  list_help1
 0     88   0    0             @const1626
-0    346   1   10   248  4.6  read_temperature
+0     72   0    0             @const1627
+0     92   0    0             @const1628
+0     62   0    0             @const1629
+0     72   0    0             @const1630
+0     72   0    0             @const1631
+0     80   0    0             @const1632
+0     48   0    0             @const1633
+0     86   0    0             @const1634
+0     88   0    0             @const1635
+0    344   1   10   248  4.6  read_temperature
 0     82   0    2             @SITOF
 0    350   1   14             @DIVFF
 0    246   0   11             @MULFF
 0    632   1   16             @ADDFF
+0    148   0    2   604  4.5  Bits_status1
+0    212   0    1   786  6.6  Bits_status2
 0    112   0    2   271  5.5  set_power_level
 0    112   0    2   271  5.5  set_low_power_level
-0    166   0    4    94  2.8  update_temperature_string
-0     20   0    0             @const1648
+0    164   0    4    94  2.8  update_temperature_string
+0     20   0    0             @const1661
 0     34   0    1             @SPRINTF
-0     40   0    3             @PSTRINGCN_1650
+0     40   0    3             @PSTRINGCN_1663
 0     66   0    5             @FTOSD
-0    440   1   13             @PRINTF_L32D_1650FPFPF
-0     48   0    0             @const1659
-0   1834   4   57  5045  9.9  process_dollar_commands
-0     10   0    0             @const1671
-0    188   0    9             @PRINTF_LU_1650
-0      8   0    0             @const1674
+0    432   1   13             @PRINTF_L32D_1663FPFPF
+0     48   0    0             @const1672
+0    300   1   10  2321  9.6  prepare_binary_status
+0     62   0    4             @SFTOI
+0   1846   3   57  5045  9.9  process_dollar_commands
+0     10   0    0             @const1692
+0    188   0    9             @PRINTF_LU_1663
+0      8   0    0             @const1695
 0     44   0    3             @DIV88
-0    124   0    2             @PRINTF_U_1650
-0     10   0    0             @const1681
-0     74   0    2             @PRINTF_X_1650
-0     18   0    0             @const1685
-0     18   0    0             @const1686
-0    204   0   12   272  5.0  get_new_bitrate
-0   1062   2    4   458  1.4  list_help
-0     72   0    0             @const1693
-0     78   0    0             @const1694
-0     76   0    0             @const1695
-0     76   0    0             @const1696
-0     76   0    0             @const1697
-0     84   0    0             @const1698
-0     80   0    0             @const1699
-0     60   0    0             @const1700
-0     76   0    0             @const1701
-0     84   0    0             @const1702
-0     60   0    0             @const1703
-0     82   0    0             @const1704
-0     76   0    0             @const1705
-0     80   0    0             @const1706
-0     86   0    0             @const1707
-0     86   0    0             @const1708
-0     74   0    0             @const1709
-0     64   0    0             @const1710
-0   7280  14   71 20207 15.4  process_ttccp_commands
-0     42   0    0             @const1727
-0      8   0    0             @const1729
-0     36   0    0             @const1730
-0      8   0    0             @const1731
-0     36   0    0             @const1732
-0      8   0    0             @const1734
-0     12   0    0             @const1736
-0      8   0    0             @const1737
-0     12   0    0             @const1739
-0      8   0    0             @const1740
-0     12   0    0             @const1742
-0      8   0    0             @const1743
-0     12   0    0             @const1745
-0      8   0    0             @const1746
-0     12   0    0             @const1748
-0      8   0    0             @const1749
-0      8   0    0             @const1751
-0      8   0    0             @const1753
-0     12   0    0             @const1755
-0     68   0    0             @goto11934
-0      8   0    0             @const1757
-0     12   0    0             @const1759
-0      8   0    0             @const1760
-0     40   0    0             @const1761
-0     42   0    0             @const1762
-0     36   0    2             @PSTRINGC_1650
-0     12   0    0             @const1765
+0    124   0    2             @PRINTF_U_1663
+0     10   0    0             @const1702
+0     74   0    2             @PRINTF_X_1663
+0     18   0    0             @const1706
+0     18   0    0             @const1707
+0    208   0   12   272  5.0  get_new_bitrate
+0   1276   2    4   542  1.4  list_help
+0     72   0    0             @const1714
+0     78   0    0             @const1715
+0     76   0    0             @const1716
+0     76   0    0             @const1717
+0     76   0    0             @const1718
+0     84   0    0             @const1719
+0     80   0    0             @const1720
+0     60   0    0             @const1721
+0     76   0    0             @const1722
+0     84   0    0             @const1723
+0     60   0    0             @const1724
+0     82   0    0             @const1725
+0     76   0    0             @const1726
+0     80   0    0             @const1727
+0     86   0    0             @const1728
+0     86   0    0             @const1729
+0     74   0    0             @const1730
+0     88   0    0             @const1731
+0     72   0    0             @const1732
+0     90   0    0             @const1733
+0     64   0    0             @const1734
+0   8448  15   74 23388 17.4  process_ttccp_commands
+0     42   0    0             @const1752
+0      8   0    0             @const1754
+0     36   0    0             @const1755
+0      8   0    0             @const1756
+0     36   0    0             @const1757
+0      8   0    0             @const1759
+0     12   0    0             @const1761
+0      8   0    0             @const1762
+0     12   0    0             @const1764
+0      8   0    0             @const1765
+0     12   0    0             @const1767
 0      8   0    0             @const1768
-0      8   0    0             @const1769
-0      8   0    0             @const1770
+0     12   0    0             @const1770
 0      8   0    0             @const1771
 0     12   0    0             @const1773
 0      8   0    0             @const1774
-0     12   0    0             @const1776
-0     10   0    0             @const1777
-0     10   0    0             @const1778
-0     52   0    0             @const1779
-0     24   0    0             @const1781
-0     32   0    0             @const1782
-0     30   0    0             @const1783
-0     70   0    0             @const1784
+0      8   0    0             @const1776
+0      8   0    0             @const1778
+0     12   0    0             @const1780
+0     68   0    0             @goto12025
+0      8   0    0             @const1782
+0     12   0    0             @const1784
+0      8   0    0             @const1785
+0     12   0    0             @const1787
+0      8   0    0             @const1788
+0     12   0    0             @const1790
 0     70   0    5             @DIV1616
-0     40   0    2             @PSTRINGR_1650
-0     88   0    0             @const1789
+0      8   0    0             @const1794
+0     12   0    0             @const1796
+0      8   0    0             @const1797
+0     40   0    0             @const1798
+0     42   0    0             @const1799
+0     34   0    2             @PSTRINGC_1663
+0     12   0    0             @const1802
+0      8   0    0             @const1805
+0      8   0    0             @const1806
+0      8   0    0             @const1807
+0      8   0    0             @const1808
+0     12   0    0             @const1810
+0      8   0    0             @const1811
+0     12   0    0             @const1813
+0     10   0    0             @const1814
+0     10   0    0             @const1815
+0     52   0    0             @const1816
+0     24   0    0             @const1818
+0     32   0    0             @const1819
+0     30   0    0             @const1820
+0     70   0    0             @const1821
+0     38   0    2             @PSTRINGR_1663
+0     80   0    0             @const1823
+0     42   0    0             @const1824
 0    360   1    8  1087  8.6  ttccp_handler
 0    362   1    8  1025  7.6  dollar_handler
-0     34   0    0             @const1801
-0     38   0    0             @const1803
-0     44   0    0             @goto12295
+0     34   0    0             @const1836
+0     38   0    0             @const1838
+0     44   0    0             @goto12489
 0     62   0    2   231  2.7  comm_handler
+0    118   0    0             @const1853
 0    110   0    5   528  7.5  send_FPGA_command
 0    170   0    7   907  7.5  get_FPGA_register
 0    248   0   16   173  4.3  compute_bitrate_coefficient
@@ -179,35 +195,35 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     46   0    0    99  3.7  write_setup
 0     50   0    0   181  4.4  read_setup
 0     28   0    0             @MEMSET
-0    292   1    8   421  7.8  convert_power1
-0    190   0    2   774  5.9  set_power_en
+0    226   0    9   255  6.7  convert_power1
+0    144   0    3   399  5.3  set_power_en
 0    114   0    8   264  4.6  get_requested_power_level
-0    446   1    4  1420  8.3  power_output
+0    496   1    4  1496 10.3  power_output
 0     36   0    0   202  1.4  init_io_ports
 0    102   0    0   407  2.4  init_system
-0    102   0    4   310  2.8  update_all
-0     48   0    0   303  3.7  timer_tick
-0    490   1    6  1192  5.3  MAIN
+0    106   0    4   310  2.8  update_all
+0    172   0    0   795  6.3  timer_tick
+0    622   1    6  1560  6.8  MAIN
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               58
-    Statements              1407
-    Comments                1098
-    Volume (V)              84929
-    Difficulty (D)          270.2
-    Effort to implement (E) 22951911
-    Time to implement (T)   354 hours, 12 minutes
-    Est Delivered Bugs (B)  27
-    Cyclomatic Complexity   266
-    Maintainability (MI)    102
+    Functions               62
+    Statements              1559
+    Comments                779
+    Volume (V)              97145
+    Difficulty (D)          298.3
+    Effort to implement (E) 28982336
+    Time to implement (T)   447 hours, 15 minutes
+    Est Delivered Bugs (B)  31
+    Cyclomatic Complexity   302
+    Maintainability (MI)    44
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000D0   202  0  
-000D2-07FFE  25716  6842  
+000D2-07FFE  28480  4078  
 
 
 

@@ -1,4 +1,4 @@
->>> Warning 216 "BA1520QTX.c" Line 825(3,4): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
+>>> Warning 216 "BA1520QTX.c" Line 828(3,4): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
       Memory usage:   ROM=88%      RAM=28% - 41%
       0 Errors,  1 Warnings.
 Build Successful.

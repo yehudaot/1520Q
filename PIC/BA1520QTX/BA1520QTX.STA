@@ -13,7 +13,7 @@ Stack size: 30
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  827   295  19  BA1520QTX.c
+  830   295  19  BA1520QTX.c
    34     0   0  BA1520QTX.h
  1000     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18LF45K22.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
@@ -24,7 +24,7 @@ Lines Stmts  %   Files
    77    18   1  BA1520QTX_intr.c
  1667  1040  67  BA1520QTX_serial.c
 ----- -----
- 4757  1559 Total
+ 4760  1559 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -209,7 +209,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 Program metrics:
     Functions               62
     Statements              1559
-    Comments                780
+    Comments                779
     Volume (V)              97145
     Difficulty (D)          298.3
     Effort to implement (E) 28982336

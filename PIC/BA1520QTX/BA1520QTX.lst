@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
+CCS PCH C Compiler, Version 5.008, 5967               08-Jul-18 16:20
 
                Filename:   C:\BA\Software_projects\PIC\1520Q\BA1520QTX\BA1520QTX.lst
 
@@ -4127,7 +4127,7 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 .................... #define FREQ_LOW_THRESH   22570 
 .................... #define FREQ_HIGH_THRESH  23290 
 ....................  
-.................... #define DEADBAND 8  //was 6 yehuda 
+.................... #define DEADBAND 6  //was 6 yehuda 
 ....................  
 .................... #define BINARY_STATUS_LENTGH 26 // requested be the client to be 26 bytes (16.11.16) 
 ....................  
@@ -15624,6 +15624,8 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 20DE:  MOVFF  FC4,229
 20E2:  MOVLB  2
 20E4:  MOVFF  FC3,228
+....................   
+....................  
 ....................   current_power = convert_power1(power); 
 20E8:  MOVFF  229,22D
 20EC:  MOVFF  228,22C
@@ -15633,13 +15635,15 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 20FA:  MOVFF  01,10C
 ....................   set_power_en();      
 20FE:  BRA    1EA2
-....................      
+....................    
 ....................   level = get_requested_power_level(); 
 2100:  BRA    1F32
 2102:  MOVFF  02,22B
 2106:  MOVFF  01,22A
+....................  
+....................  
 ....................   if (power > level + DEADBAND || power < level - DEADBAND) 
-210A:  MOVLW  08
+210A:  MOVLW  06
 210C:  MOVLB  2
 210E:  ADDWF  x2A,W
 2110:  MOVWF  01
@@ -15653,7 +15657,7 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 2120:  MOVF   x28,W
 2122:  SUBWF  01,W
 2124:  BNC   2144
-2126:  MOVLW  08
+2126:  MOVLW  06
 2128:  SUBWF  x2A,W
 212A:  MOVWF  00
 212C:  MOVLW  00
@@ -15683,14 +15687,14 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 2156:  MOVF   1B,W
 2158:  SUBLW  95
 215A:  BC    2164
-....................         power_control -= DEADBAND / 8;		//was 2 yehuda 
-215C:  MOVLW  01
+....................         power_control -= DEADBAND / 2;		 
+215C:  MOVLW  03
 215E:  SUBWF  1B,F
 2160:  MOVLW  00
 2162:  SUBWFB 1C,F
 ....................       } 
 2164:  BRA    217C
-....................     else if (power_control <= 1010) 
+....................     else if (power_control <= 1010)			 
 2166:  MOVF   1C,W
 2168:  SUBLW  03
 216A:  BNC   217C
@@ -15699,8 +15703,8 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 2170:  SUBLW  F2
 2172:  BNC   217C
 ....................       { 
-....................       power_control += DEADBAND / 8; 
-2174:  MOVLW  01
+....................       power_control += DEADBAND / 2; 
+2174:  MOVLW  03
 2176:  ADDWF  1B,F
 2178:  MOVLW  00
 217A:  ADDWFC 1C,F
@@ -15716,9 +15720,8 @@ CCS PCH C Compiler, Version 5.008, 5967               05-Jul-18 10:24
 ....................     }	 
 2190:  MOVLB  0
 2192:  RETURN 0
+.................... } 
 ....................  
-....................  
-....................   } 
 ....................  
 .................... //============================================================================= 
 .................... #separate 

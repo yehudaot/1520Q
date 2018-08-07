@@ -33,7 +33,7 @@ UINT manual_negative = 0xFFFF;
 #define FREQ_LOW_THRESH   22570
 #define FREQ_HIGH_THRESH  23290
 
-#define DEADBAND 8  //was 6 yehuda
+#define DEADBAND 6  //was 6 yehuda
 
 #define BINARY_STATUS_LENTGH 26 // requested be the client to be 26 bytes (16.11.16)
 
@@ -605,26 +605,29 @@ void power_output(void)
   set_adc_channel(A2D_POWER); // select forward power input A2D_POWER
   delay_us(20);
   power = read_adc();
+ 
+
   current_power = convert_power1(power);
   set_power_en();     
-    
+  
   level = get_requested_power_level();
+
+
   if (power > level + DEADBAND || power < level - DEADBAND)
     {
     if (power < level)
       {
       if (power_control >= 150)
-        power_control -= DEADBAND / 8;		//was 2 yehuda
+        power_control -= DEADBAND / 2;		
       }
-    else if (power_control <= 1010)
+    else if (power_control <= 1010)			
       {
-      power_control += DEADBAND / 8;
+      power_control += DEADBAND / 2;
       }
     set_AD5314(DAC_POS_VOLT, power_control);
     }	
+}
 
-
-  }
 
 //=============================================================================
 #separate

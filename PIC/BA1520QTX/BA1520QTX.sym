@@ -1362,7 +1362,7 @@ Project Directory:
     C:\BA\Software_projects\PIC\1520Q\BA1520QTX\
 
 Project Files:
-    BA1520QTX.c                                             [05-Jul-18 10:16  CRC=01440A66]
+    BA1520QTX.c                                             [08-Jul-18 11:56  CRC=4DD2E292]
     BA1520QTX.h                                             [21-Jun-18 09:15  CRC=F7055A44]
     ..\..\..\..\..\Program Files (x86)\PICC\devices\18LF45K22.h [03-Jul-13 14:29  CRC=EA1DE8E5]
     ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h [22-May-08 11:51  CRC=2D1F019F]
@@ -1373,7 +1373,7 @@ Project Files:
     BA1520QTX_intr.c                                        [21-Feb-18 17:46  CRC=67E1C67E]
     BA1520QTX_serial.c                                      [05-Jul-18 10:24  CRC=F988D4E7]
 
-Source signature=486465EC
+Source signature=94F33E18
 
 Units:
     BA1520QTX (main)

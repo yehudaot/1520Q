@@ -1,19 +1,19 @@
 
-ROM used:   28686/16384 (88%)
-            28686/16384 (88%) including unused fragments
+ROM used:   28108/16384 (86%)
+            28108/16384 (86%) including unused fragments
 
-            6.0 Average locations per line
-            18.4 Average locations per statement
+            5.9 Average locations per line
+            18.3 Average locations per statement
 
 RAM used:   429/1536 (28%) at main() level
-            627/1536 (41%) worst case
+            625/1536 (41%) worst case
 
 Stack used: 11 worst case (9 in main + 2 for interrupts)
 Stack size: 30
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  830   295  19  BA1520QTX.c
+  830   296  19  BA1520QTX.c
    34     0   0  BA1520QTX.h
  1000     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18LF45K22.h
    28     0   0  ..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
@@ -22,9 +22,9 @@ Lines Stmts  %   Files
    58    40   3  AD9746.c
   148    61   4  ADRF6703.c
    77    18   1  BA1520QTX_intr.c
- 1667  1040  67  BA1520QTX_serial.c
+ 1667  1019  66  BA1520QTX_serial.c
 ----- -----
- 4760  1559 Total
+ 4760  1539 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -100,7 +100,7 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     18   0    0             @const1706
 0     18   0    0             @const1707
 0    208   0   12   272  5.0  get_new_bitrate
-0   1276   2    4   542  1.4  list_help
+0   1218   2    4   514  1.4  list_help
 0     72   0    0             @const1714
 0     78   0    0             @const1715
 0     76   0    0             @const1716
@@ -120,67 +120,64 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     74   0    0             @const1730
 0     88   0    0             @const1731
 0     72   0    0             @const1732
-0     90   0    0             @const1733
-0     64   0    0             @const1734
-0   8448  15   74 23388 17.4  process_ttccp_commands
-0     42   0    0             @const1752
-0      8   0    0             @const1754
-0     36   0    0             @const1755
-0      8   0    0             @const1756
-0     36   0    0             @const1757
-0      8   0    0             @const1759
-0     12   0    0             @const1761
-0      8   0    0             @const1762
-0     12   0    0             @const1764
-0      8   0    0             @const1765
-0     12   0    0             @const1767
-0      8   0    0             @const1768
-0     12   0    0             @const1770
-0      8   0    0             @const1771
-0     12   0    0             @const1773
-0      8   0    0             @const1774
-0      8   0    0             @const1776
-0      8   0    0             @const1778
-0     12   0    0             @const1780
-0     68   0    0             @goto12025
-0      8   0    0             @const1782
-0     12   0    0             @const1784
-0      8   0    0             @const1785
-0     12   0    0             @const1787
-0      8   0    0             @const1788
-0     12   0    0             @const1790
-0     70   0    5             @DIV1616
-0      8   0    0             @const1794
-0     12   0    0             @const1796
-0      8   0    0             @const1797
-0     40   0    0             @const1798
-0     42   0    0             @const1799
+0     64   0    0             @const1733
+0   8044  14   74 22355 16.9  process_ttccp_commands
+0     42   0    0             @const1751
+0      8   0    0             @const1753
+0     36   0    0             @const1754
+0      8   0    0             @const1755
+0     36   0    0             @const1756
+0      8   0    0             @const1758
+0     12   0    0             @const1760
+0      8   0    0             @const1761
+0     12   0    0             @const1763
+0      8   0    0             @const1764
+0     12   0    0             @const1766
+0      8   0    0             @const1767
+0     12   0    0             @const1769
+0      8   0    0             @const1770
+0     12   0    0             @const1772
+0      8   0    0             @const1773
+0      8   0    0             @const1775
+0      8   0    0             @const1777
+0     12   0    0             @const1779
+0     68   0    0             @goto12021
+0      8   0    0             @const1781
+0     12   0    0             @const1783
+0      8   0    0             @const1784
+0     12   0    0             @const1786
+0      8   0    0             @const1787
+0     12   0    0             @const1789
+0      8   0    0             @const1790
+0     40   0    0             @const1791
+0     42   0    0             @const1792
 0     34   0    2             @PSTRINGC_1663
-0     12   0    0             @const1802
-0      8   0    0             @const1805
-0      8   0    0             @const1806
-0      8   0    0             @const1807
-0      8   0    0             @const1808
-0     12   0    0             @const1810
-0      8   0    0             @const1811
-0     12   0    0             @const1813
-0     10   0    0             @const1814
-0     10   0    0             @const1815
-0     52   0    0             @const1816
-0     24   0    0             @const1818
-0     32   0    0             @const1819
-0     30   0    0             @const1820
-0     70   0    0             @const1821
+0     12   0    0             @const1795
+0      8   0    0             @const1798
+0      8   0    0             @const1799
+0      8   0    0             @const1800
+0      8   0    0             @const1801
+0     12   0    0             @const1803
+0      8   0    0             @const1804
+0     12   0    0             @const1806
+0     10   0    0             @const1807
+0     10   0    0             @const1808
+0     52   0    0             @const1809
+0     24   0    0             @const1811
+0     32   0    0             @const1812
+0     30   0    0             @const1813
+0     70   0    0             @const1814
+0     70   0    5             @DIV1616
 0     38   0    2             @PSTRINGR_1663
-0     80   0    0             @const1823
-0     42   0    0             @const1824
+0     80   0    0             @const1819
+0     42   0    0             @const1820
 0    360   1    8  1087  8.6  ttccp_handler
 0    362   1    8  1025  7.6  dollar_handler
-0     34   0    0             @const1836
-0     38   0    0             @const1838
-0     44   0    0             @goto12489
+0     34   0    0             @const1832
+0     38   0    0             @const1834
+0     44   0    0             @goto12455
 0     62   0    2   231  2.7  comm_handler
-0    118   0    0             @const1853
+0    118   0    0             @const1849
 0    110   0    5   528  7.5  send_FPGA_command
 0    170   0    7   907  7.5  get_FPGA_register
 0    248   0   16   173  4.3  compute_bitrate_coefficient
@@ -196,34 +193,34 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     50   0    0   181  4.4  read_setup
 0     28   0    0             @MEMSET
 0    226   0    9   255  6.7  convert_power1
-0    144   0    3   399  5.3  set_power_en
+0    146   0    3   425  5.3  set_power_en
 0    114   0    8   264  4.6  get_requested_power_level
 0    496   1    4  1496 10.3  power_output
 0     36   0    0   202  1.4  init_io_ports
 0    102   0    0   407  2.4  init_system
-0    106   0    4   310  2.8  update_all
+0    102   0    4   310  2.8  update_all
 0    172   0    0   795  6.3  timer_tick
-0    622   1    6  1560  6.8  MAIN
+0    618   1    6  1560  6.8  MAIN
  Inline         0             @cinit1
 
 Program metrics:
     Functions               62
-    Statements              1559
-    Comments                779
-    Volume (V)              97145
-    Difficulty (D)          298.3
-    Effort to implement (E) 28982336
-    Time to implement (T)   447 hours, 15 minutes
+    Statements              1539
+    Comments                817
+    Volume (V)              95933
+    Difficulty (D)          298.0
+    Effort to implement (E) 28583670
+    Time to implement (T)   441 hours, 6 minutes
     Est Delivered Bugs (B)  31
-    Cyclomatic Complexity   302
-    Maintainability (MI)    44
+    Cyclomatic Complexity   297
+    Maintainability (MI)    49
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000D0   202  0  
-000D2-07FFE  28480  4078  
+000D2-07FFE  27902  4656  
 
 
 

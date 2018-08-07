@@ -1,4 +1,5 @@
 >>> Warning 216 "BA1520QTX.c" Line 828(3,4): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
-      Memory usage:   ROM=88%      RAM=28% - 41%
-      0 Errors,  1 Warnings.
+>>> Warning 202 "C:\BA\Software_projects\PIC\1520Q\BA1520QTX\BA1520QTX_serial.c" Line 731(13,16): Variable never used:   sub
+      Memory usage:   ROM=86%      RAM=28% - 41%
+      0 Errors,  2 Warnings.
 Build Successful.

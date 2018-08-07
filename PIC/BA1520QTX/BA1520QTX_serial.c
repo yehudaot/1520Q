@@ -1,6 +1,6 @@
 
 
-UCHAR comm_ptr, ttccp = 1, debug_mode = 0;
+UCHAR comm_ptr, ttccp = 1, debug_mode = 1;    //yehuda 1520Q cancel LI17592
 UCHAR FPGA_image[32],D2A_image[20];
 UCHAR ttccp_error_message[40];
 
@@ -718,7 +718,7 @@ void list_help(void)
 	COM1_send_str("CS <clock phase><cr>  \tSet clock phase (0-1)\r\n");
 	COM1_send_str("UT <UART Time><cr>  \tSet the stop time, default 15 (0-240)\r\n");// VERSION 3.3  21.03.2016
 	COM1_send_str("US <UART Status><cr>  \tSet the Block (0-1)\r\n");// VERSION 3.3  21.03.2016
-	COM1_send_str("BG <UART Change><cr>  \tSet the UART refresh rate [Hz] (1-20)\r\n");// VERSION 3.3  23.03.2016
+	//COM1_send_str("BG <UART Change><cr>  \tSet the UART refresh rate [Hz] (1-20)\r\n");// VERSION 3.3  23.03.2016  //yehuda 1520Q remove BG command
 	COM1_send_str("SV <save all><cr>  \tSave parameters\r");
 	COM1_send_str("\r\n");
 }
@@ -1208,7 +1208,7 @@ void process_ttccp_commands(void)
 			break;
 		}
 		break;
-		
+/*		///////////////////////////yehuda 1520Q remove BG command
 		case 'B': // VERSION 3.6 BG Block Ghange and Check Function 23.0.2016
 		if (!ttccp_login) break;
 		switch (c2)
@@ -1239,7 +1239,7 @@ void process_ttccp_commands(void)
 			break;
 		}
 		break;
-		
+*/		
       	
 		case 'I':
 		if (!ttccp_login) break;

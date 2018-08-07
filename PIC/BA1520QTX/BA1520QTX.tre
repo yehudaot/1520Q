@@ -1,5 +1,5 @@
 ÀÄBA1520QTX
-   ÃÄMAIN  0/622  Ram=6
+   ÃÄMAIN  0/618  Ram=6
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ÃÄinit_system  0/102  Ram=0
@@ -12,9 +12,9 @@
    ³  ÃÄpower_output  0/496  Ram=4
    ³  ³  ÃÄset_AD5314  0/592  Ram=3
    ³  ³  ÃÄconvert_power1  0/226  Ram=9
-   ³  ³  ³  ÃÄ@const1853  0/118  Ram=0
-   ³  ³  ³  ÃÄ@const1853  0/118  Ram=0
-   ³  ³  ³  ÀÄ@const1853  0/118  Ram=0
+   ³  ³  ³  ÃÄ@const1849  0/118  Ram=0
+   ³  ³  ³  ÃÄ@const1849  0/118  Ram=0
+   ³  ³  ³  ÀÄ@const1849  0/118  Ram=0
    ³  ³  ÃÄset_AD5314  0/592  Ram=3
    ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ³  ÃÄset_AD5314  0/592  Ram=3
@@ -26,10 +26,10 @@
    ³  ³  ÃÄset_AD5314  0/592  Ram=3
    ³  ³  ÃÄconvert_power1  0/226  Ram=9
    ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄset_power_en  0/144  Ram=3
+   ³  ³  ÃÄset_power_en  0/146  Ram=3
    ³  ³  ³  ÃÄset_AD5314  0/592  Ram=3
    ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ÀÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ÀÄupdate_all  0/102  Ram=4
    ³  ³  ³     ÃÄ@delay_ms1  0/42  Ram=1
    ³  ³  ³     ÃÄPLL_compute_freq_parameters  0/574  Ram=22
    ³  ³  ³     ³  ÃÄ@MUL3232  0/92  Ram=14
@@ -83,20 +83,20 @@
    ³  ³  ³  ÀÄ*
    ³  ³  ÀÄ@delay_ms1  0/42  Ram=1
    ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ÀÄ*
    ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ÃÄ@delay_us1  0/32  Ram=1
    ³  ³  ÀÄ@delay_us1  0/32  Ram=1
-   ³  ÃÄ@const1799  0/42  Ram=0
+   ³  ÃÄ@const1792  0/42  Ram=0
    ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ÀÄ*
    ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ÀÄ*
    ³  ÃÄset_AD5314  0/592  Ram=3
    ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ÀÄ*
    ³  ÃÄtimer_tick  0/172  Ram=0
    ³  ³  ÀÄCOM1_send_block  0/22  Ram=3
@@ -120,7 +120,7 @@
    ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ÃÄCOM1_get_chr  0/44  Ram=1
    ³  ³  ³  ÃÄCOM1_init  0/22  Ram=0
-   ³  ³  ³  ÃÄprocess_ttccp_commands  0/8448  Ram=74
+   ³  ³  ³  ÃÄprocess_ttccp_commands  0/8044  Ram=74
    ³  ³  ³  ³  ÃÄpeek_char  0/30  Ram=0
    ³  ³  ³  ³  ÃÄget_char  0/32  Ram=1
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
@@ -140,10 +140,10 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1752  0/42  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1751  0/42  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄlist_help  0/1276  Ram=4
+   ³  ³  ³  ³  ÃÄlist_help  0/1218  Ram=4
    ³  ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ³  ÃÄ@const1714  0/72  Ram=0
@@ -203,10 +203,7 @@
    ³  ³  ³  ³  ³  ÃÄ@const1732  0/72  Ram=0
    ³  ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ³  ÃÄ@const1733  0/90  Ram=0
-   ³  ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
-   ³  ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ³  ÃÄ@const1734  0/64  Ram=0
+   ³  ³  ³  ³  ³  ÃÄ@const1733  0/64  Ram=0
    ³  ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ³  ÀÄCOM1_send_str  0/200  Ram=6
@@ -232,7 +229,7 @@
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ³  ³  ³  ÃÄPLL_update  0/82  Ram=0
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1755  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1754  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -250,10 +247,10 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg0  0/92  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -267,7 +264,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg6  0/54  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -286,7 +283,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg0  0/92  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -305,7 +302,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg0  0/92  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -313,30 +310,7 @@
    ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
-   ³  ³  ³  ³  ÃÄ@goto12025  0/68  Ram=0
-   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
-   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
-   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@goto12021  0/68  Ram=0
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
@@ -347,22 +321,45 @@
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄpower_output  0/496  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄpower_output  0/496  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -380,12 +377,12 @@
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1755  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1754  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -398,9 +395,9 @@
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1755  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1754  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -414,7 +411,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg0  0/92  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -424,7 +421,7 @@
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
    ³  ³  ³  ³  ÃÄread_setup  0/50  Ram=0
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄupdate_all  0/106  Ram=4
+   ³  ³  ³  ³  ÃÄupdate_all  0/102  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄwrite_setup  0/46  Ram=0
    ³  ³  ³  ³  ³  ÀÄwrite_int_eeprom  0/112  Ram=9
@@ -437,7 +434,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -454,31 +451,12 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PRINTF_U_1663  0/124  Ram=2
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
-   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@PRINTF_LU_1663  0/188  Ram=9
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
-   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@DIV3232  0/148  Ram=13
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
-   ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@DIV1616  0/70  Ram=5
-   ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
-   ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@PRINTF_LU_1663  0/188  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -492,7 +470,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg6  0/54  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -563,7 +541,7 @@
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -581,13 +559,13 @@
    ³  ³  ³  ³  ÃÄget_char  0/32  Ram=1
    ³  ³  ³  ³  ÃÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄset_low_power_level  0/112  Ram=2
    ³  ³  ³  ³  ³  ÀÄget_int  0/200  Ram=7
    ³  ³  ³  ³  ³     ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -631,7 +609,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg6  0/54  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -650,7 +628,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄFPGA_set_reg0  0/92  Ram=9
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -672,10 +650,10 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
-   ³  ³  ³  ³  ÃÄ@const1816  0/52  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1809  0/52  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1799  0/42  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1792  0/42  Ram=0
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -691,8 +669,8 @@
    ³  ³  ³  ³  ÃÄ@SPRINTF  0/34  Ram=1
    ³  ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1819  0/32  Ram=0
-   ³  ³  ³  ³  ÃÄ@const1820  0/30  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1812  0/32  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1813  0/30  Ram=0
    ³  ³  ³  ³  ÃÄ@DIV1616  0/70  Ram=5
    ³  ³  ³  ³  ÃÄ@DIV1616  0/70  Ram=5
    ³  ³  ³  ³  ÃÄ@PSTRINGCN_1663  0/40  Ram=3
@@ -796,7 +774,7 @@
    ³  ³  ³  ³  ³  ÀÄ*
    ³  ³  ³  ³  ÃÄupdate_temperature_string  0/164  Ram=4
    ³  ³  ³  ³  ³  ÀÄ*
-   ³  ³  ³  ³  ÃÄ@const1757  0/36  Ram=0
+   ³  ³  ³  ³  ÃÄ@const1756  0/36  Ram=0
    ³  ³  ³  ³  ÀÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³  ³     ÀÄ*
    ³  ³  ³  ÃÄCOM1_send_str  0/200  Ram=6
@@ -806,7 +784,7 @@
    ³  ³  ³  ÀÄCOM1_send_str  0/200  Ram=6
    ³  ³  ³     ÀÄ*
    ³  ³  ÀÄdollar_handler  0/362  Ram=8
-   ³  ³     ÃÄ@goto12489  0/44  Ram=0
+   ³  ³     ÃÄ@goto12455  0/44  Ram=0
    ³  ³     ÃÄCOM1_get_chr  0/44  Ram=1
    ³  ³     ÃÄinc_dec  0/636  Ram=5
    ³  ³     ³  ÃÄwrite_D2A  0/106  Ram=5
@@ -974,13 +952,13 @@
    ³  ³     ³  ÃÄpower_output  0/496  Ram=4
    ³  ³     ³  ³  ÀÄ*
    ³  ³     ³  ÃÄ@delay_ms1  0/42  Ram=1
-   ³  ³     ³  ÀÄupdate_all  0/106  Ram=4
+   ³  ³     ³  ÀÄupdate_all  0/102  Ram=4
    ³  ³     ³     ÀÄ*
-   ³  ³     ÃÄ@const1836  0/34  Ram=0
+   ³  ³     ÃÄ@const1832  0/34  Ram=0
    ³  ³     ÃÄCOM1_send_str  0/200  Ram=6
    ³  ³     ³  ÀÄ*
    ³  ³     ÃÄCOM1_init  0/22  Ram=0
-   ³  ³     ÃÄ@const1838  0/38  Ram=0
+   ³  ³     ÃÄ@const1834  0/38  Ram=0
    ³  ³     ÀÄCOM1_send_str  0/200  Ram=6
    ³  ³        ÀÄ*
    ³  ÃÄpower_output  0/496  Ram=4

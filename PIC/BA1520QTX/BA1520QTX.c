@@ -168,7 +168,7 @@ UINT  tx_block_len , TX_Counter = 0;
 UINT  status_tx_index;
 UCHAR status_buffer[BINARY_STATUS_LENTGH]; 
 
-UCHAR ttccp_login = 0;
+UCHAR ttccp_login = 1;		//yehuda cancel LI17592
 
 
 //========== function prototypes ===============================
@@ -527,7 +527,7 @@ void set_power_en()
     }
     else
     {
- //       output_low(POWER_EN);       //yehuda shut down the fpga
+        output_low(POWER_EN);       //yehuda shut down the fpga
         if(setup.cot == 1) 
         {
             // this was a special case in before the refactoring
@@ -617,12 +617,12 @@ void power_output(void)
     {
     if (power < level)
       {
-      if (power_control >= 150)
-        power_control -= DEADBAND / 2;		
+      if (power_control <= 1010)
+        power_control += DEADBAND / 2;		
       }
-    else if (power_control <= 1010)			
+    else if (power_control >= 150)			
       {
-      power_control += DEADBAND / 2;
+      power_control -= DEADBAND / 2;
       }
     set_AD5314(DAC_POS_VOLT, power_control);
     }	
@@ -702,7 +702,7 @@ void update_all(void)
   delay_ms(5);
   FPGA_set_bitrate();
   bitr = setup.bitrate;
-  power_control = 1000;
+  power_control = 0;
   }
 
 void timer_tick() 
@@ -763,7 +763,7 @@ delay_ms(1000);
 	//setup.UART_Status = 1;// VERSION 3.3: 10.2.2016 
   power_level = setup.power_in[setup.power_level];
   low_power_level = setup.power_in[setup.power_low_level];
-  power_control = 1000;
+  power_control = 0;
   power_output();
   
 
